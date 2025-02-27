@@ -6,22 +6,39 @@ using UnityEngine;
 public class Item 
 {
     [SerializeField] int quantity;
-    [SerializeField] GameObject go;
+    //[SerializeField] GameObject go; 
     public string name;
 
+
+    /*
+     * if useing game object instead of string n for invenotry
+     * 
     public Item(int quantity, GameObject gObject)
     {
         this.quantity = quantity;
         go = gObject;
-       name = gObject.name;
+        name = gObject.name;
+        //name = n;
     }
-
+    */
+    
+    
+    
+    public Item(int quantity, string n)
+    {
+        this.quantity = quantity;
+        name = n;
+    }
+    
+    
+    /*
     public GameObject GObject
     {
         get { return go; }
         set { go = value; }
     }
-
+    */
+    
     public int Quantity
     {
         get { return quantity; }
@@ -36,7 +53,8 @@ public class Item
 
     public override string ToString()
     {
-        return go.name + ": " + quantity + "\n";
+        //return go.name + ": " + quantity + "\n";
+        return name + ": " + quantity + "\n";
     }
 
 }
